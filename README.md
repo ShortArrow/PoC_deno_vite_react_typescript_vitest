@@ -1,22 +1,18 @@
-# Vite + Deno + React + TypeScript
+# Vite + Deno + React + TypeScript + Vitest
 
 ## Running
 
-You need to have Deno v1.28.0 or later installed to run this repo.
+You need to have Deno v1.34.3 or later installed to run this repo.
 
 Start a dev server:
 
 ```bash
-deno task dev
+docker compose run dev
 ```
 
 ## Deploy
 
-Build production assets:
-
-```bash
-deno task build
-```
+Auto detect main branch commit by Cloudflare pages.
 
 ## Build Test
 
@@ -24,9 +20,17 @@ deno task build
 docker compose run buildtest
 ```
 
-## Notes
+## Unit Test
 
-- You need to use `.mjs` or `.mts` extension for the `vite.config.[ext]` file.
+```bash
+docker compose run vitest
+```
+
+## Config
+
+- vite is using `vite.config.mts`
+- vitest is using `vitest.config.ts`
+- deno is using `deno.json`
 
 ## Papercuts
 
